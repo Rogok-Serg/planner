@@ -1,36 +1,61 @@
-import Paginations from 'components/Pagination/Pagination';
+import Modal from 'components/Modal/Modal';
+import Pagination from 'components/Pagination/Pagination';
 import TodoList from 'components/Todolist/TodoList';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { getTodo, paginationTodo } from 'redux/operations';
+import { getAllTasks, paginationTodo } from 'redux/operations';
 import { selectTodo } from 'redux/selectors';
+import {
+  StyledContainer,
+  StyledTitle,
+  StyledButtonCreate,
+  StyledBlockButton,
+} from './TodoListPage.styled';
 
 const TodoListPage = () => {
   const taskList = useSelector(selectTodo);
-  const params = useParams();
-  console.log('params: ', params);
-  const [page, setPage] = useState(2);
+  const [page, setPage] = useState(1);
+  const [isOpen, setIsOpen] = useState(false);
+
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(getTodo());
+  const handleOpenModal = () => {
+    setIsOpen(true);
+  };
+  const handleClosedModal = () => {
+    setIsOpen(false);
+  };
+
+  const getTasks = useCallback(() => {
+    dispatch(paginationTodo());
+    dispatch(getAllTasks());
   }, [dispatch]);
+
+  useEffect(() => {
+    getTasks();
+  }, [getTasks]);
 
   const updateList = page => {
     dispatch(paginationTodo(page));
   };
 
-  const handleButton = () => {
-    setPage(page + 1);
+  const handleButton = page => {
+    setPage(page);
     updateList(page);
   };
   return (
-    <div>
-      <h1>TodoListPage</h1>
+    <StyledContainer>
+      <StyledTitle>Todo List</StyledTitle>
+      <StyledBlockButton>
+        <StyledButtonCreate onClick={handleOpenModal} type="button">
+          + Create new task
+        </StyledButtonCreate>
+      </StyledBlockButton>
+
+      {isOpen && <Modal onClick={handleClosedModal} />}
       <TodoList taskList={taskList} />
-      <Paginations handleButton={handleButton} />
-    </div>
+      <Pagination handleButton={handleButton} taskList={taskList} />
+    </StyledContainer>
   );
 };
 

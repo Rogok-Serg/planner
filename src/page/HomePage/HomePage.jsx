@@ -1,8 +1,21 @@
+import {
+  StyledWrapperText,
+  StyledText,
+  StyledTitle,
+  Styledbackground,
+} from './HomePage.styled';
+
 const HomePage = () => {
   return (
-    <div>
-      <h1>HomePage</h1>
-    </div>
+    <Styledbackground>
+      <StyledTitle>Програма Planner</StyledTitle>
+      <StyledWrapperText>
+        <StyledText>
+          Найкраща програма для складання списків справ, яка стане вам у пригоді
+          під час роботи й відпочинку.
+        </StyledText>
+      </StyledWrapperText>
+    </Styledbackground>
   );
 };
 

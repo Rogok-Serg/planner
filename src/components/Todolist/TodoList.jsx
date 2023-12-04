@@ -1,14 +1,15 @@
+import * as React from 'react';
 import TodoItem from './TodoItem/TodoItem';
+import { StyledList } from './TodoList.styled';
 
 const TodoList = ({ taskList }) => {
   return (
     <div>
-      <h2>TodoList</h2>
-      <ul>
+      <StyledList>
         {taskList.map(item => (
           <TodoItem key={item.id} item={item} />
         ))}
-      </ul>
+      </StyledList>
     </div>
   );
 };

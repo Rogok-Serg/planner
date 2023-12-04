@@ -11,8 +11,8 @@ const HomePage = () => {
       <StyledTitle>Програма Planner</StyledTitle>
       <StyledWrapperText>
         <StyledText>
-          Найкраща програма для складання списків справ, яка стане вам у пригоді
-          під час роботи й відпочинку.
+          Програма для складання списків справ, яка стане вам в пригоді під час
+          роботи й відпочинку.
         </StyledText>
       </StyledWrapperText>
     </Styledbackground>

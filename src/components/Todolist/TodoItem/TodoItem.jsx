@@ -27,7 +27,7 @@ const TodoItem = ({ item }) => {
     <StyledItem>
       <StyledWrapperInput>
         <label style={{ marginRight: 10, marginLeft: 10 }}>
-          <input type="checkbox" checked={completed} />
+          <input type="checkbox" checked={completed} readOnly />
         </label>
         <p style={{ marginRight: 10 }}>{title}</p>
       </StyledWrapperInput>

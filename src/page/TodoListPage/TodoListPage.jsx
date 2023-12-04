@@ -54,7 +54,7 @@ const TodoListPage = () => {
 
       {isOpen && <Modal onClick={handleClosedModal} />}
       <TodoList taskList={taskList} />
-      <Pagination handleButton={handleButton} taskList={taskList} />
+      <Pagination page={page} handleButton={handleButton} taskList={taskList} />
     </StyledContainer>
   );
 };

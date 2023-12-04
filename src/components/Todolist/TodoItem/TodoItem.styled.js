@@ -20,6 +20,12 @@ export const StyledWrapperInput = styled.div`
   align-items: center;
 `;
 
+export const StyledWrapperButton = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
 export const StyledButton = styled.button`
   color: #000;
   border-radius: 5px;

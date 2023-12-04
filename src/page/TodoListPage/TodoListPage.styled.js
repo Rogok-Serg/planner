@@ -25,4 +25,8 @@ export const StyledButtonCreate = styled.button`
 export const StyledBlockButton = styled.div`
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 767px) {
+    padding-left: 30px;
+  }
 `;

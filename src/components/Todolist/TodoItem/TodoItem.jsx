@@ -7,6 +7,7 @@ import {
   StyledItem,
   StyledWrapperInput,
   StyledButton,
+  StyledWrapperButton,
 } from './TodoItem.styled';
 
 const TodoItem = ({ item }) => {
@@ -31,7 +32,7 @@ const TodoItem = ({ item }) => {
         </label>
         <p style={{ marginRight: 10 }}>{title}</p>
       </StyledWrapperInput>
-      <div>
+      <StyledWrapperButton>
         <StyledButton
           type="button"
           onClick={() => editButton({ id, title, completed })}
@@ -45,7 +46,7 @@ const TodoItem = ({ item }) => {
         >
           &times;
         </StyledButton>
-      </div>
+      </StyledWrapperButton>
       {isOpen && <ModalEdit onClick={handleClosedModal} />}
     </StyledItem>
   );

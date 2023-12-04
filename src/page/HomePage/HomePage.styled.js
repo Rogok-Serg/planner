@@ -17,21 +17,62 @@ export const Styledbackground = styled.div`
 export const StyledTitle = styled.h1`
   margin: 0;
   text-align: end;
-  padding-top: 90px;
-  padding-right: 30px;
   color: #fff;
-  font-size: 50px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 75px;
+    padding-right: 15px;
+    font-size: 25px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 80px;
+    padding-right: 15px;
+    font-size: 35px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 50px;
+    padding-top: 90px;
+    padding-right: 30px;
+  }
 `;
 
 export const StyledWrapperText = styled.div`
   display: flex;
   justify-content: flex-end;
-  padding-top: 60px;
-  margin-right: 130px;
+
+  @media screen and (max-width: 767px) {
+    padding-top: 30px;
+    padding-right: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    padding-top: 40px;
+    padding-right: 15px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 60px;
+    margin-right: 130px;
+  }
 `;
 
 export const StyledText = styled.p`
   width: 300px;
   color: #fff;
   text-align: start;
+
+  @media screen and (max-width: 767px) {
+    width: 220px;
+    font-size: 14px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 300px;
+    font-size: 16px;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 320px;
+    font-size: 24px;
+  }
 `;

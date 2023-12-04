@@ -47,8 +47,12 @@ const Modal = ({ onClick }) => {
     if (e.key === 'Escape') onClick();
   });
 
+  const closeBackground = event => {
+    event.target.tagName === 'DIV' && onClick();
+  };
+
   return (
-    <StyledBackdrop>
+    <StyledBackdrop onClick={event => closeBackground(event)}>
       <StyledModal>
         <StyledClose onClick={onClick}>&times;</StyledClose>
         <h2>Please enter the task</h2>
